@@ -46,7 +46,7 @@ const nameReducer = (_: State, action: NameAction): State => {
   }
 };
 
-function NameProvider({ children }: Props) {
+const NameProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(nameReducer, { name: "" });
   const value: Context = {
     name: state.name,
@@ -54,15 +54,15 @@ function NameProvider({ children }: Props) {
   };
 
   return <NameContext.Provider value={value}>{children}</NameContext.Provider>;
-}
+};
 
-function useName() {
+const useName = () => {
   const context = React.useContext(NameContext);
   if (context === undefined) {
     throw new Error("useName must be used within a NameProvider");
   }
 
   return context;
-}
+};
 
 export { NameActionKind, NameProvider, useName };
