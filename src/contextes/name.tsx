@@ -59,7 +59,7 @@ function NameProvider({ children }: Props) {
 function useName() {
   const context = React.useContext(NameContext);
   if (context === undefined) {
-    throw new Error("useAuth must be used within a AuthProvider");
+    throw new Error("useName must be used within a NameProvider");
   }
 
   return context;

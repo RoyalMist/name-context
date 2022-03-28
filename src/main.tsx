@@ -11,6 +11,7 @@ ReactDOM.render(
       <Change />
       <Display />
       <Display />
+      <Display />
     </NameProvider>
   </React.StrictMode>,
   document.getElementById("root")
