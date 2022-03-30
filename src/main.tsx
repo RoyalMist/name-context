@@ -1,18 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { NameProvider } from "./contextes/name";
 import "./index.css";
-import Change from "./pages/Change";
-import Display from "./pages/Display";
+import Switcher from "./switcher";
 
 ReactDOM.render(
   <React.StrictMode>
-    <NameProvider>
-      <Change />
-      <Display />
-      <Display />
-      <Display />
-    </NameProvider>
+    <Switcher />
   </React.StrictMode>,
   document.getElementById("root")
 );

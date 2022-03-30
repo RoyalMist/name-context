@@ -1,14 +1,14 @@
 import { FormEvent, useRef } from "react";
-import { NameActionKind, useName } from "../../contextes/name";
 
-const Change = () => {
+const JotaiChange = () => {
   let form = useRef(null);
-  let { dispatcher } = useName();
+
+  const clear = () => null;
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const form_data = new FormData(!!form.current ? form.current : undefined);
-    dispatcher({ type: NameActionKind.SET, value: `${form_data.get("name")}` });
+    `${form_data.get("name")}`;
   };
 
   return (
@@ -40,9 +40,7 @@ const Change = () => {
         </button>
         <button
           type="button"
-          onClick={() => {
-            dispatcher({ type: NameActionKind.CLEAR });
-          }}
+          onClick={clear}
           className="w-full px-8 py-3 mt-6 text-sm text-white transition duration-150 ease-in-out bg-red-700 rounded focus:outline-none hover:bg-red-400"
         >
           Clear
@@ -51,4 +49,4 @@ const Change = () => {
     </form>
   );
 };
-export default Change;
+export default JotaiChange;
