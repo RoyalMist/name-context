@@ -1,5 +1,4 @@
 import { useAtom } from "jotai";
-import React from "react";
 import { NAME_ATOM } from "../../atoms/name";
 
 const JotaiDisplay = () => {
