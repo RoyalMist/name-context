@@ -1,14 +1,17 @@
+import { useAtom } from "jotai";
 import { FormEvent, useRef } from "react";
+import { NAME_ATOM } from "../../atoms/name";
 
 const JotaiChange = () => {
-  let form = useRef(null);
+  const form = useRef(null);
+  const [_, setName] = useAtom(NAME_ATOM);
 
-  const clear = () => null;
+  const clear = () => setName("");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const form_data = new FormData(!!form.current ? form.current : undefined);
-    `${form_data.get("name")}`;
+    setName(`${form_data.get("name")}`);
   };
 
   return (
@@ -49,4 +52,5 @@ const JotaiChange = () => {
     </form>
   );
 };
+
 export default JotaiChange;

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useAtom } from "jotai";
+import React from "react";
+import { NAME_ATOM } from "../../atoms/name";
 
 const JotaiDisplay = () => {
-  const [name, setName] = useState("");
+  const [name] = useAtom(NAME_ATOM);
 
   return <h1>{name}</h1>;
 };

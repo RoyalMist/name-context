@@ -1,3 +1,3 @@
 import { atom } from "jotai";
 
-const nameAtom = atom("");
+export const NAME_ATOM = atom("");
